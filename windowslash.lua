@@ -59,9 +59,11 @@ end
 
 function WindowSlash.StartSlash()
     WindowSlash._WindowsCheck()
-    Misc.WindowName=""
-    math.randomseed(os.time())
+    
     if not slash then 
+        Audio.Stop()
+        Misc.WindowName=""
+        math.randomseed(os.time())
         Time.timeScale = 1
         soundchannel = "_windowslash_sfx_" .. WindowSlash._randomString(64)
         slash = true
