@@ -122,12 +122,15 @@ end
 
 function WindowSlash.Update()
     frames = frames + (1*Time.timeScale)
-    WindowSlash._RemoveCYFTraditionalBehaviour()
     WindowSlash._renderNines()
     if frames % 6 == 0 then
         WindowSlash._bigSlashTick()
     end
+    if slash then
+        WindowSlash._RemoveCYFTraditionalBehaviour()
+    end
     if slash and bigslashdone then
+        
         if frames % 5 == 0 then
             WindowSlash._SlashShake()
         end
